@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --primary: 0, 0%, 96%;
-        --secondary: 40, 5%, 89%;
-        --background: 0, 0%, 11%;
-    }
+  :root {
+    --primary: 0, 0%, 96%;
+    --secondary: 40, 5%, 89%;
+    --background: 0, 0%, 11%;
+    --background-foreground: 0, 0%, 25%;
+  }
 
-    body{
-        @apply bg-background text-primary overflow-hidden
-    }
+  body {
+    @apply bg-background text-primary;
+  }
 }
