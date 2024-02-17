@@ -19,6 +19,7 @@ const config: Config = {
         primary: "hsl(var(--primary))",
         secondary: "hsl(var(--secondary))",
         background: "hsl(var(--background))",
+        border: "hex(var(--border))",
       }
     },
   },
