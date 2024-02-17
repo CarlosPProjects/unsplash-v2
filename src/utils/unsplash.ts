@@ -3,7 +3,7 @@
 const { ACCESS_KEY, SECRET_KEY } = process.env;
 
 export const getListPhotos = async () => {
-    const apiURL = `https://api.unsplash.com/photos/?client_id=${ACCESS_KEY}`
+    const apiURL = `https://api.unsplash.com/photos/?per_page=12&client_id=${ACCESS_KEY}`
 
     const data = await fetch(apiURL)
         .then(res => res.json())

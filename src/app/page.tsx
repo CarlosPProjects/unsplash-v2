@@ -1,3 +1,4 @@
+import ListPhotos from "@/components/ListPhotos";
 import Search from "@/components/Search";
 import Image from "next/image";
 
@@ -13,44 +14,7 @@ export default function Home() {
         </p>
         <Search />
       </section>
-      <section className="w-full h-[70vh] grid grid-cols-1 md:grid-cols-8 grid-rows-10 gap-2 md:gap-4 z-0">
-        <div className="grid grid-cols-1 grid-rows-8 col-span-1 md:col-span-5 row-span-6 md:row-span-10 gap-2 md:gap-4">
-          <div className="row-span-8 md:row-span-5 border border-white border-opacity-50 relative">
-            <Image
-              src={"/images/neom-gOqBe7ropxM-unsplash.webp"}
-              fill
-              alt="a person standing on top of a rocky hill"
-              className="object-cover object-center"
-            />
-          </div>
-          <div className="row-span-0 hidden md:block md:row-span-3 border border-white border-opacity-50 relative">
-            <Image
-              src={"/images/sitraka-E0sOhoDXsbw-unsplash.webp"}
-              fill
-              alt="a multicolored building with people walking by it"
-              className="object-cover object-center"
-            />
-          </div>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-1 md:grid-rows-8 col-span-1 md:col-span-3 row-span-4 md:row-span-10 gap-2 md:gap-4">
-          <div className="col-span-1 md:row-span-4 border border-white border-opacity-50 relative">
-            <Image
-              src={"/images/neom-WZCMd9K-sHY-unsplash.webp"}
-              fill
-              alt="a person wearing a hat standing in front of a mountain"
-              className="object-cover object-center"
-            />
-          </div>
-          <div className="col-span-1 md:row-span-4 border border-white border-opacity-50 relative">
-            <Image
-              src={"/images/neom-ne3RC_Q9UEA-unsplash.webp"}
-              fill
-              alt="a sea turtle swimming over a coral reef"
-              className="object-cover object-center"
-            />
-          </div>
-        </div>
-      </section>
+      <ListPhotos />
       <div className="h-screen absolute left-0 top-0 right-0 bottom-0 z-0 bg-gradient-to-t from-background to-transparent" />
     </main>
   );
