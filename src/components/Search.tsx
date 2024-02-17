@@ -11,7 +11,7 @@ const Search = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-md flex gap-4 items-center px-4 py-3 border border-background-foreground rounded-md bg-background-foreground focus-within:bg-transparent transition-colors duration-300 group"
+      className="w-full max-w-md flex gap-4 items-center px-4 py-3 border border-background-foreground rounded-md bg-background-foreground hover:opacity-80 focus-within:bg-transparent transition-all duration-300 group"
     >
       <SearchIcon className="w-5 h-5 text-secondary opacity-50 transition-opacity duration-300 group-focus-within:opacity-100 " />
       <input
