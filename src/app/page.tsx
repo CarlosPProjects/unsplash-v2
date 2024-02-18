@@ -14,7 +14,7 @@ export default function Home() {
         <Search />
       </section>
       <ListPhotos />
-      <div className="absolute left-0 top-0 right-0 bottom-0 z-0 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute top-0 bottom-0 w-full z-0 bg-gradient-to-t from-background to-transparent" />
     </main>
   );
 }
