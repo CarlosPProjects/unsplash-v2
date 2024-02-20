@@ -1,9 +1,10 @@
 'use server'
 
 const { ACCESS_KEY, SECRET_KEY } = process.env;
+const baseURL = 'https://api.unsplash.com'
 
 export const getListPhotos = async () => {
-    const apiURL = `https://api.unsplash.com/photos/?per_page=12&client_id=${ACCESS_KEY}`
+    const apiURL = `${baseURL}/photos/?per_page=12&client_id=${ACCESS_KEY}`
 
     const data = await fetch(apiURL)
         .then(res => res.json())
@@ -11,8 +12,17 @@ export const getListPhotos = async () => {
     return data;
 }
 
-export const searchPhoto = async (keyword: string) => {
-    const apiURL = `https://api.unsplash.com/search/photos/?client_id=${ACCESS_KEY}&query=office`
+export const searchPhotosByTerm = async (keyword: string) => {
+    const apiURL = `${baseURL}/search/photos/?per_page=12&client_id=${ACCESS_KEY}&query=${keyword}`
+
+    const data = await fetch(apiURL)
+        .then(res => res.json())
+
+    return data
+}
+
+export const getPhotoById = async (id: string) => {
+    const apiURL = `${baseURL}/photos/${id}?client_id=${ACCESS_KEY}`
 
     const data = await fetch(apiURL)
         .then(res => res.json())

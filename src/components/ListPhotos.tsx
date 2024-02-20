@@ -1,19 +1,21 @@
 "use client";
 
 import { ImageProps } from "@/types/Image";
-import { getListPhotos } from "@/utils/unsplash";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import { cn } from "@/utils/utils";
 
-const ListPhotos = () => {
+interface Props {
+  data: ImageProps[]
+}
+
+const ListPhotos: React.FC<Props> = ({ data }) => {
   const [list, setList] = useState<ImageProps[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchPhotos = async () => {
-      const data = await getListPhotos();
       setList(data);
       setLoading(false);
     };

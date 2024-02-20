@@ -1,7 +1,11 @@
 import ListPhotos from "@/components/ListPhotos";
 import Search from "@/components/Search";
+import { getListPhotos } from "@/utils/unsplash";
 
-export default function Home() {
+export default async function Home() {
+
+  const data = await getListPhotos();
+
   return (
     <main className="container pt-4 md:pt-12 max-md:px-4 flex items-center flex-col gap-8 md:gap-16 h-screen overflow-hidden">
       <section className="flex flex-col items-center gap-4 z-10">
@@ -13,7 +17,7 @@ export default function Home() {
         </p>
         <Search />
       </section>
-      <ListPhotos />
+      <ListPhotos data={data} />
       <div className="absolute top-0 bottom-0 w-full z-0 bg-gradient-to-t from-background to-transparent" />
     </main>
   );
