@@ -1,14 +1,13 @@
 import ListPhotos from "@/components/ListPhotos";
 import { searchPhotosByTerm } from "@/utils/unsplash";
-import { ImageProps } from "next/image";
 
-export interface Props {
+type Props = {
     params: {
         terms: string;
     };
 }
 
-interface SearchProps {
+type SearchProps = {
     total: number,
     total_pages: number,
     results: ImageProps[],

@@ -1,4 +1,4 @@
-interface UserProps {
+type UserProps = {
     id: string;
     updated_at: string;
     username: string;
@@ -15,7 +15,7 @@ interface UserProps {
     total_promoted_photos: number;
 }
 
-interface ImageProps {
+type ImageProps = {
     id: string;
     slug: string;
     created_at: string;

@@ -4,7 +4,7 @@ import { getListPhotos } from "@/utils/unsplash";
 
 export default async function Home() {
 
-  const data = await getListPhotos();
+  const data = await getListPhotos() as ImageProps[];
 
   return (
     <main className="container pt-4 md:pt-12 max-md:px-4 flex items-center flex-col gap-8 md:gap-16 h-screen overflow-hidden">
