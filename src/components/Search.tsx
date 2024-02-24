@@ -1,7 +1,6 @@
 "use client";
 
 import { SearchIcon } from "lucide-react";
-import { useState } from "react";
 import { useRouter } from "next/navigation"
 
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -11,13 +10,13 @@ import { z } from "zod"
 const formSchema = z.object({
   query: z.string().min(3, {
     message: "Please enter at least 3 characters",
-  }).max(10, {
+  }).max(16, {
     message: "Please enter at most 10 characters",
   }),
 })
 
 const Search = () => {
-
+  const router = useRouter()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -25,15 +24,9 @@ const Search = () => {
     }
   })
 
-  const router = useRouter()
-
-  const handleSubmit = async (values: z.infer<typeof formSchema>) => {
-
+  const handleSubmit = (values: z.infer<typeof formSchema>) => {
     const { query } = values;
-
     router.push(`/photos/${query}`)
-
-    return;
   };
 
   return (

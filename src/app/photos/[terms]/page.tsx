@@ -1,5 +1,6 @@
+import GridLoader from "@/components/GridLoader";
 import ListPhotos from "@/components/ListPhotos";
-import { searchPhotosByTerm } from "@/utils/unsplash";
+import { Suspense } from "react";
 
 type Props = {
     params: {
@@ -7,22 +8,17 @@ type Props = {
     };
 }
 
-type SearchProps = {
-    total: number,
-    total_pages: number,
-    results: ImageProps[],
-}
-
-const ListPhotosByTerms: React.FC<Props> = async ({ params }) => {
+const ListPhotosByTerms: React.FC<Props> = ({ params }) => {
 
     const term = params.terms;
 
-    const data = await searchPhotosByTerm(term) as SearchProps
-
     return (
-        <>
-            {data && <ListPhotos data={data.results} />}
-        </>
+        <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-semibold capitalize">{term}</h2>
+            <Suspense fallback={<div>Loading...</div>}>
+                <ListPhotos term={term} />
+            </Suspense>
+        </div>
     )
 }
 
