@@ -6,7 +6,7 @@ interface Props {
 
 const Template: React.FC<Props> = ({ children }) => {
     return (
-        <div className="container flex flex-col gap-8 pt-4 pb-8">
+        <div className="container max-md:px-4 min-h-screen flex flex-col gap-10 pt-4 pb-8">
             <Header />
             {children}
         </div>
