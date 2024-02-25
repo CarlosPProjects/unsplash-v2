@@ -9,7 +9,7 @@ export default function Home() {
         <p className="text-center -mb-4 font-medium text-sm">Beautiful</p>
         <h1 className="text-4xl md:text-5xl font-semibold">Stoodiow</h1>
         <p className="text-center max-w-lg text-secondary tracking-wide mb-2 md:mb-4">
-          Beautiful images from the world's most generous community.
+          Beautiful images from the world&apos;s most generous community.
           Explore the best images on Unsplash.
         </p>
         <Search />
